@@ -95,3 +95,14 @@ git stash list
 # 取出暂存文件
 ## 1. git stash apply  恢复文件到工作区，保留文件在 stash list
 ## 2. git stash pop    恢复文件到工作区，删除文件
+
+# 处理远程冲突问题
+## 1. 新增远程
+git remote add github xxxxx.git
+### 1.1 远程是一个空仓库
+git push --all github
+### 1.2 远程是一个有文件的仓库
+####1.2.1
+1. git fetch github
+2. git merge --allow-unrelated-histories github
+3. git push -all github 
